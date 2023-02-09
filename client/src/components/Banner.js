@@ -9,7 +9,7 @@ function Banner() {
     const response = await axios.get(
       "https://api.themoviedb.org/3/movie/top_rated?api_key=ae88a9c1382acbcb3f5b50fff7547370&language=en-US&page=1"
     );
-    console.log(response.data);
+
     setBannerImage(response.data.results[0].backdrop_path);
     setBannerName(response.data.results[0].original_title);
     setBannerOverview(response.data.results[0].overview);
