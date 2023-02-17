@@ -1,7 +1,9 @@
 import { useMovieData } from "../helper/useMovieData";
 
 function Banner() {
-  const { data } = useMovieData();
+  const ok = useMovieData();
+  console.log(ok);
+  const data = ok.data;
 
   return (
     <div className="absolute top-36 left-64 mr-5 ">

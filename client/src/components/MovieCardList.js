@@ -9,8 +9,8 @@ function MovieCard() {
       {TopmovieQuery.isLoading ? (
         <p>isLoading</p>
       ) : (
-        TopmovieQuery.data.data.results.map((movie) => (
-          <div className="flex flex-col">
+        TopmovieQuery.data.results.map((movie) => (
+          <div>
             <MovieCardItem
               key={movie.id}
               title={movie.title}

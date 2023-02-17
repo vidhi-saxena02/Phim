@@ -8,7 +8,7 @@ function HomePage() {
       <div className=" absolute top-96 left-64 text-3xl font-bold text-white font-sans ml-2 mt-10">
         Top Rated
       </div>
-      <MovieCard />
+      {/* <MovieCard /> */}
     </div>
   );
 }
