@@ -1,25 +1,17 @@
 import { usePopularData } from "../helper/useMovieData";
-import MovieCardItem from "../components/MovieCardItem";
+import PopularMovieList from "../components/PopularMovieList";
+import Banner from "../components/Banner";
 
 function PopularPage() {
   const popularQuery = usePopularData();
-  console.log(popularQuery.data.data);
+  console.log(popularQuery);
   return (
-    <div className="flex flex-row  items-start flex-wrap ">
-      {popularQuery.isLoading ? (
-        <p>isLoading</p>
-      ) : (
-        popularQuery.data.data.results.map((movie) => (
-          <MovieCardItem
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            image={movie.poster_path}
-            vote={movie.vote_average}
-            overview={movie.overview}
-          />
-        ))
-      )}
+    <div className="flex flex-col items-start">
+      <Banner MovieData={usePopularData} />
+      <div className=" text-3xl m-4 font-bold text-white font-sans">
+        Popular
+      </div>
+      <PopularMovieList />
     </div>
   );
 }

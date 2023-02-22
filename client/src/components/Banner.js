@@ -1,8 +1,7 @@
 import React from "react";
-import { useMovieData } from "../helper/useMovieData";
 
-const Banner = () => {
-  const bannerQuery = useMovieData();
+const Banner = ({ MovieData }) => {
+  const bannerQuery = MovieData();
   if (bannerQuery.isLoading) {
     return <p>isLoading</p>;
   }

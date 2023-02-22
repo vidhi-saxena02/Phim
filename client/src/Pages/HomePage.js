@@ -1,10 +1,11 @@
 import Banner from "../components/Banner";
 import MovieCard from "../components/MovieCardList";
+import { useMovieData } from "../helper/useMovieData";
 
 function HomePage() {
   return (
     <div className="flex flex-col items-start">
-      <Banner />
+      <Banner MovieData={useMovieData} />
       <div className=" text-3xl m-4 font-bold text-white font-sans">
         Top Rated
       </div>
