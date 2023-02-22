@@ -2,10 +2,11 @@ import { FiHeart } from "react-icons/fi";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { FiCalendar } from "react-icons/fi";
 import { VscDebugBreakpointLogUnverified } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
-    <div className=" absolute top-8 left-10 flex flex-col gap-16">
+    <div className=" mt-6 flex flex-col gap-16">
       <div className="text-white font-bold text-3xl font-sans md:font-serif">
         Phi<span className="text-red-800">m</span>
       </div>
@@ -36,11 +37,19 @@ function SideBar() {
         <div className="text-gray-400 font-mono text-x ">Catagories</div>
         <div className="flex flex-row items-center  ">
           <VscDebugBreakpointLogUnverified className="text-gray-400 font-mono text-xl" />
-          <div className="text-gray-400 font-mono text-xl ml-2">Top Rated</div>
+          <Link to="/">
+            <div className="text-gray-400 font-mono text-xl cursor-pointer ml-2">
+              Top Rated
+            </div>
+          </Link>
         </div>
         <div className="flex flex-row items-center  ">
           <VscDebugBreakpointLogUnverified className="text-gray-400 font-mono text-xl" />
-          <div className="text-gray-400 font-mono text-xl ml-2">Popular</div>
+          <Link to="/popular">
+            <div className="text-gray-400 cursor-pointer font-mono text-xl ml-2">
+              Popular
+            </div>
+          </Link>
         </div>
       </div>
     </div>
