@@ -2,9 +2,26 @@ import { FiHeart } from "react-icons/fi";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { FiCalendar } from "react-icons/fi";
 import { VscDebugBreakpointLogUnverified } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 function SideBar() {
+  const location = useLocation();
+  const [selected, setSelected] = useState(false);
+  const [selected2, setSelected2] = useState(false);
+
+  const handleSelected = () => {
+    if (location.pathname === "/") {
+      setSelected(true);
+      setSelected2(false);
+    }
+
+    if (location.pathname === "/popular") {
+      setSelected(false);
+      setSelected2(true);
+    }
+  };
+
   return (
     <div className=" mt-6 flex flex-col gap-16">
       <div className="text-white font-bold text-3xl font-sans md:font-serif">
@@ -38,7 +55,14 @@ function SideBar() {
         <div className="flex flex-row items-center  ">
           <VscDebugBreakpointLogUnverified className="text-gray-400 font-mono text-xl" />
           <Link to="/">
-            <div className="text-gray-400 font-mono text-xl cursor-pointer ml-2">
+            <div
+              className={`cursor-pointer  font-mono ml-2 ${
+                selected2
+                  ? "text-white font-bold text-xl"
+                  : "text-gray-400 text-xl"
+              }`}
+              onClick={handleSelected}
+            >
               Top Rated
             </div>
           </Link>
@@ -46,7 +70,14 @@ function SideBar() {
         <div className="flex flex-row items-center  ">
           <VscDebugBreakpointLogUnverified className="text-gray-400 font-mono text-xl" />
           <Link to="/popular">
-            <div className="text-gray-400 cursor-pointer font-mono text-xl ml-2">
+            <div
+              className={`cursor-pointer  font-mono ml-2 ${
+                selected
+                  ? "text-white font-bold text-xl"
+                  : "text-gray-400 text-xl"
+              }`}
+              onClick={handleSelected}
+            >
               Popular
             </div>
           </Link>

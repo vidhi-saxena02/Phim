@@ -9,7 +9,7 @@ const Banner = () => {
   const data = bannerQuery.data.data;
   console.log(bannerQuery);
   return (
-    <div className="m-4">
+    <div className="mt-4">
       <div className="bg-black border border-white rounded-lg drop-shadow-xl  px-10 py-1  h-64 flex flex-row justify-between ">
         <div className="flex flex-col">
           <div className="font-extrabold text-4xl text-white m-4">
