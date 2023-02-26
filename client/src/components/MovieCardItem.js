@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+// import { useQuery } from "@tanstack/react-query";
+// import axios from "axios";
 
 function MovieCardItem({ id, title, image, vote, overview }) {
   // const getVideo = async (id) => {
@@ -17,7 +17,7 @@ function MovieCardItem({ id, title, image, vote, overview }) {
       <img
         src={"https://image.tmdb.org/t/p/original" + image}
         alt=""
-        className="object-fill rounded-lg cursor-pointer ml-10 mb-10 border border-white w-44 hover:scale-105 "
+        className="object-fill rounded-lg cursor-pointer  border border-white w-44 hover:scale-105 "
       />
       <div className="invisible group-hover:visible absolute top-0 left-2 right-10 rounded-lg w-60 h-72 bg-black hover: bg-gray-900  transition ease-in duration-500 hover:scale-125">
         {/* <video

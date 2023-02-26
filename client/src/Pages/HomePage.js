@@ -4,9 +4,9 @@ import { useMovieData } from "../helper/useMovieData";
 
 function HomePage() {
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-start ">
       <Banner MovieData={useMovieData} />
-      <div className=" text-3xl m-4 font-bold text-white font-sans">
+      <div className=" text-3xl m- font-bold text-white font-sans">
         Top Rated
       </div>
       <MovieCard />

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function SideBar() {
   const location = useLocation();
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(true);
   const [selected2, setSelected2] = useState(false);
 
   const handleSelected = () => {
@@ -23,7 +23,7 @@ function SideBar() {
   };
 
   return (
-    <div className=" mt-6 flex flex-col gap-16">
+    <div className="  flex flex-col gap-16">
       <div className="text-white font-bold text-3xl font-sans md:font-serif">
         Phi<span className="text-red-800">m</span>
       </div>
@@ -32,24 +32,24 @@ function SideBar() {
 
         <div className="flex flex-row items-center ">
           <FiHeart className="text-gray-400 font-mono text-xl" />
-          <div className="text-gray-400 font-mono text-xl ml-2">WishList</div>
+          <div className="text-gray-400 font-mono text-xl px-2">WishList</div>
         </div>
 
         <div className="flex flex-row items-center  ">
           <MdOutlineWatchLater className="text-gray-400 font-mono text-xl" />
-          <div className="text-gray-400 font-mono text-xl ml-2">
+          <div className="text-gray-400 font-mono text-xl px-2">
             Watch Later
           </div>
         </div>
 
         <div className="flex flex-row items-center  ">
           <FiCalendar className="text-gray-400 font-mono text-xl" />
-          <div className="text-gray-400 font-mono text-xl ml-2">
+          <div className="text-gray-400 font-mono text-xl px-2">
             Coming Soon
           </div>
         </div>
       </div>
-      <hr className="h-px my-8 bg-gray-50 border-0 dark:bg-gray-800" />
+      <hr className="h-px  bg-gray-50 border-0 dark:bg-gray-800" />
       <div className="flex flex-col gap-3">
         <div className="text-gray-400 font-mono text-x ">Catagories</div>
         <div className="flex flex-row items-center  ">
@@ -57,7 +57,7 @@ function SideBar() {
           <Link to="/">
             <div
               className={`cursor-pointer  font-mono ml-2 ${
-                selected2
+                selected
                   ? "text-white font-bold text-xl"
                   : "text-gray-400 text-xl"
               }`}
@@ -72,7 +72,7 @@ function SideBar() {
           <Link to="/popular">
             <div
               className={`cursor-pointer  font-mono ml-2 ${
-                selected
+                selected2
                   ? "text-white font-bold text-xl"
                   : "text-gray-400 text-xl"
               }`}

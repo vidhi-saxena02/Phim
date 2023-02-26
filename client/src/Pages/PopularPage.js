@@ -1,17 +1,16 @@
-import { usePopularData } from "../helper/useMovieData";
-import PopularMovieList from "../components/PopularMovieList";
+// import { usePopularData } from "../helper/useMovieData";
+// import PopularMovieList from "../components/PopularMovieList";
 import Banner from "../components/Banner";
 
 function PopularPage() {
-  const popularQuery = usePopularData();
-  console.log(popularQuery);
+  // const popularQuery = usePopularData();
   return (
     <div className="flex flex-col items-start">
-      <Banner MovieData={usePopularData} />
+      {/* <Banner MovieData={usePopularData} /> */}
       <div className=" text-3xl m-4 font-bold text-white font-sans">
         Popular
       </div>
-      <PopularMovieList />
+      {/* <PopularMovieList /> */}
     </div>
   );
 }
