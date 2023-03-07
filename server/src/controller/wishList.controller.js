@@ -14,3 +14,12 @@ exports.addToWishList = catchAsyncError(async (req, res, next) => {
     wishList,
   });
 });
+
+exports.getWishList = catchAsyncError(async (req, res, next) => {
+  const wishList = await WishListDatabase.find();
+
+  res.status(200).json({
+    success: true,
+    wishList,
+  });
+});
