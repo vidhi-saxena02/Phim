@@ -3,7 +3,7 @@ import PopularPage from "./Pages/PopularPage";
 import SideBar from "./components/SideBar";
 import { Routes, Route } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
-import LoginPage from "./Pages/LoginPage";
+import AuthenticationPage from "./Pages/AuthenticationPage";
 import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
@@ -12,7 +12,7 @@ import {
 function App() {
   return (
     // <div className="overflow-y-hidden w-screen h-screen">
-    //   <LoginPage />
+    //   <AuthenticationPage />
     // </div>
     <div className="bg-black w-screen h-screen flex justify-between overflow-x-hidden ">
       <div className="flex justify-between gap-x-9 p-5">
