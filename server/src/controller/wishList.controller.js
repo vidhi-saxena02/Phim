@@ -3,12 +3,8 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/errorHandler");
 
 exports.addToWishList = catchAsyncError(async (req, res, next) => {
-  const { movieName, movieId, user } = req.body;
-  const wishList = await WishListDatabase.create({
-    movieName,
-    movieId,
-    user,
-  });
+  req.body.user = req.user.id;
+  const wishList = await WishListDatabase.create(req.body);
 
   res.status(201).json({
     success: true,
@@ -17,7 +13,7 @@ exports.addToWishList = catchAsyncError(async (req, res, next) => {
 });
 
 exports.getWishList = catchAsyncError(async (req, res, next) => {
-  const wishList = await WishListDatabase.find();
+  const wishList = await WishListDatabase.find({ user: req.user.id });
 
   res.status(200).json({
     success: true,
